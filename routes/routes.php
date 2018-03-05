@@ -1,8 +1,10 @@
 <?php
 use App\Middleware\AuthMiddleware;
 use App\Middleware\GuestMiddleware;
-$app->get('/', 'HomeController:index')->setName('home');
 
+/**
+ * auth part -->
+ */
 $app->group('', function() {
     $this->get('/auth/signup', 'AuthController:getSignUp')->setName('auth.signup');
     $this->post('/auth/signup', 'AuthController:postSignUp');
@@ -15,6 +17,30 @@ $app->group('', function() {
     $this->get('/auth/password/change', 'PasswordController:getChangePassword')->setName('auth.password.change');
     $this->post('/auth/password/change', 'PasswordController:postChangePassword');
 })->add(new AuthMiddleware($container));
+
+
+/**
+ * public part -->
+ */
+$app->group('', function() {
+    $this->get('/', 'HomeController:index')->setName('home');
+    $this->get('/catalog', 'CatalogController:index')->setName('Catalog');
+});
+
+/**
+ * admin part -->
+ */
+$app->group('/admin', function() {
+    $this->get('', 'AdminController:index')->setName('admin_index');
+    $this->get('/catalog/add', 'AdminController:addCatalog');
+});
+
+/**
+ * api part -->
+ */
+$app->group('/api', function() {
+    $this->post('/category/add', 'AdminController:createCatalog');
+});
 
 
 

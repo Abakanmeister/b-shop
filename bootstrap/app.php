@@ -73,6 +73,11 @@ $container['PasswordController'] = function ($container) {
     return new \App\Controllers\Auth\PasswordController($container);
 };
 
+$container['CatalogController'] = function ($container) {
+    return new \App\Controllers\Auth\CatalogController($container);
+};
+
+
 $container['csrf'] = function ($container) {
     return new \Slim\Csrf\Guard;
 };
@@ -86,4 +91,4 @@ $app->add($container->csrf);
 
 v::with('App\\Validation\\Rules\\');
 
-require __DIR__ . '/../app/routes.php';
+require __DIR__ . '/../routes/routes.php';

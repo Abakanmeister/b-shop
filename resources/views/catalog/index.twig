@@ -1,0 +1,8 @@
+{% extends '../templates/app.twig' %}
+{% block content %}
+
+    {% for good in catalog %}
+        <h3>{{ good }}</h3>
+    {% endfor %}
+
+{% endblock %}
