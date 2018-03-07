@@ -1,8 +1,8 @@
 {% extends 'templates/app.twig' %}
 {% block content %}
-
     <h1>Admin Panel</h1>
-    <h3><a href="{{ path_for('add-catalog') }}">add catalog</a></h3>
-    <h3><a href="{{ path_for('show-catalog') }}">show catalog</a></h3>
-    <h3><a href="{{ path_for('show-catalog') }}">add product</a></h3>
+    <a class="btn btn-primary" href="{{ path_for('add-catalog') }}">add catalog</a>
+    <a class="btn btn-primary" href="{{ path_for('show-catalog') }}">show catalog list</a>
+    <a class="btn btn-primary" href="{{ path_for('add-product') }}">add product</a>
+    <a class="btn btn-primary" href="{{ path_for('show-product') }}">show product list</a>
 {% endblock %}

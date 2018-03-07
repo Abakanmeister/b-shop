@@ -22,19 +22,18 @@ $app->group('', function() {
  */
     $this->get('/admin', 'AdminController:index')->setName('admin_index');
     $this->get('/admin/catalog/add', 'AdminController:addCatalog')->setName('add-catalog');
-    $this->get('/admin/catalog/', 'AdminController:showCatalogsList')->setName('show-catalog');
-//    $this->get('/admin/catalog/add', 'AdminController:addCatalog')->setName('add-product');
+    $this->get('/admin/catalog/', 'AdminController:showCatalogList')->setName('show-catalog');
+    $this->get('/admin/product/add', 'AdminController:addProduct')->setName('add-product');
+    $this->get('/admin/product', 'AdminController:showProductList')->setName('show-product');
 
     /**
  * api part -->
  */
-
-
     $this->get('/api/catalog/add', 'AdminController:createCatalog')->setName('add-catalog_api');
     $this->post('/api/catalog/add', 'AdminController:createCatalog');
 
-//    $this->get('/api/catalog/add', 'AdminController:createProduct')->setName('add-product_api');
-//    $this->post('/api/catalog/add', 'AdminController:createProduct');
+    $this->get('/api/product/add', 'AdminController:createProduct')->setName('add-product_api');
+    $this->post('/api/product/add', 'AdminController:createProduct');
 
 })->add(new AuthMiddleware($container));
 

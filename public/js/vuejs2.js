@@ -1,9 +1,11 @@
 $app = new Vue({
-    el: '.show-catalog',
+    delimiters: ['${', '}'],
+    el: {
+
+    },
     data: {
-        i: 1,
+
     },
     methods: {
-
     }
 });

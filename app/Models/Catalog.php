@@ -1,6 +1,5 @@
 <?php
 namespace App\Models;
-use App\Controllers\CatalogController;
 use \Illuminate\Database\Eloquent\Model;
 
 class Catalog extends Model {
@@ -8,9 +7,11 @@ class Catalog extends Model {
     protected $fillable = [
         'title',
         'description',
-        'price'
     ];
     public function getCatalogList() {
         return Catalog::all()->toArray();
+    }
+    public function product() {
+        $this->hasMany('Product');
     }
 }

@@ -4,11 +4,21 @@
     <h1>Admin Add product</h1>
     <div class="row">
         <div class="col-md-12">
-            <form action="{{ path_for('add-product_api') }}" method="get" class="create-product-form" enctype="multipart/form-data">
-                <input type="text" class="form-control" name="title" placeholder="Введите название продукта">
-                <input type="text" class="form-control" name="description" placeholder="Описание продукта">
+            <form action="{{ path_for('add-product_api') }}" method="post" class="create-product-form" enctype="multipart/form-data">
+                <select name="car-brand" id="" class="form-control">
+                    <option disabled selected>Выберите брэнд</option>
+                    {% for value in select %}
+                        <option value="{{ value.id }}">
+                            {{ value.title }}
+                        </option>
+                    {% endfor %}
+                </select>
+                <input type="text" class="form-control" name="title" placeholder="Название продукта">
+                <input type="text" class="form-control" name="description" placeholder="Описание">
+                <input type="text" class="form-control" name="year" placeholder="Год выпуска">
                 <input type="text" class="form-control" name="price" placeholder="Цена">
-                <input type="submit" class="btn btn-primary" placeholder="Сохранить">
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+                {{ csrf.field | raw }}
             </form>
         </div>
     </div>

@@ -2,7 +2,8 @@ body {
     padding-top: 80px;
     padding-bottom: 40px;
 }
-form.create-catalog-form input {
+form input,
+form select{
     margin-bottom: 1%;
-    width: 30%;
+    width: 30% !important;
 }
