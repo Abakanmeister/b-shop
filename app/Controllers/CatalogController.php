@@ -7,5 +7,6 @@ class CatalogController extends Controller {
         $catalog = new Catalog();
         $catalog = $catalog->getCatalogList();
         return $this->view->render($response, 'index.twig', [$catalog]);
+
     }
 }

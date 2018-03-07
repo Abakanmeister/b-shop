@@ -2,3 +2,7 @@ body {
     padding-top: 80px;
     padding-bottom: 40px;
 }
+form.create-catalog-form input {
+    margin-bottom: 1%;
+    width: 30%;
+}

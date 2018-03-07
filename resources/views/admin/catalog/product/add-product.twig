@@ -1,0 +1,15 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+    <h1>Admin Add product</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <form action="{{ path_for('add-product_api') }}" method="get" class="create-product-form" enctype="multipart/form-data">
+                <input type="text" class="form-control" name="title" placeholder="Введите название продукта">
+                <input type="text" class="form-control" name="description" placeholder="Описание продукта">
+                <input type="text" class="form-control" name="price" placeholder="Цена">
+                <input type="submit" class="btn btn-primary" placeholder="Сохранить">
+            </form>
+        </div>
+    </div>
+{% endblock %}

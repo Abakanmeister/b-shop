@@ -77,6 +77,10 @@ $container['CatalogController'] = function ($container) {
     return new \App\Controllers\Auth\CatalogController($container);
 };
 
+$container['AdminController'] = function ($container) {
+    return new \App\Controllers\AdminController($container);
+};
+
 
 $container['csrf'] = function ($container) {
     return new \Slim\Csrf\Guard;

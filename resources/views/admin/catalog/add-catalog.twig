@@ -1,0 +1,15 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+    <h1>Admin Add catalog</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <form action="{{ path_for('add-catalog_api') }}" method="post" class="create-catalog-form" enctype="multipart/form-data">
+                <input type="text" class="form-control" name="title" placeholder="Введите название каталога">
+                <input type="text" class="form-control" name="description" placeholder="Описание каталога">
+                <input type="submit" class="btn btn-primary" placeholder="Сохранить">
+                {{ csrf.field | raw }}
+            </form>
+        </div>
+    </div>
+{% endblock %}

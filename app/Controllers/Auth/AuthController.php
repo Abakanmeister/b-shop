@@ -10,7 +10,6 @@ class AuthController extends Controller
 {
     public function getSignOut($request, $response) {
         $this->auth->logout();
-
         return $response->withRedirect($this->router->pathFor('home'));
 
     }

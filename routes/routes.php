@@ -16,6 +16,26 @@ $app->group('', function() {
     $this->get('/auth/signout', 'AuthController:getSignOut')->setName('auth.signout');
     $this->get('/auth/password/change', 'PasswordController:getChangePassword')->setName('auth.password.change');
     $this->post('/auth/password/change', 'PasswordController:postChangePassword');
+
+/**
+ * admin part -->
+ */
+    $this->get('/admin', 'AdminController:index')->setName('admin_index');
+    $this->get('/admin/catalog/add', 'AdminController:addCatalog')->setName('add-catalog');
+    $this->get('/admin/catalog/', 'AdminController:showCatalogsList')->setName('show-catalog');
+//    $this->get('/admin/catalog/add', 'AdminController:addCatalog')->setName('add-product');
+
+    /**
+ * api part -->
+ */
+
+
+    $this->get('/api/catalog/add', 'AdminController:createCatalog')->setName('add-catalog_api');
+    $this->post('/api/catalog/add', 'AdminController:createCatalog');
+
+//    $this->get('/api/catalog/add', 'AdminController:createProduct')->setName('add-product_api');
+//    $this->post('/api/catalog/add', 'AdminController:createProduct');
+
 })->add(new AuthMiddleware($container));
 
 
@@ -27,20 +47,7 @@ $app->group('', function() {
     $this->get('/catalog', 'CatalogController:index')->setName('Catalog');
 });
 
-/**
- * admin part -->
- */
-$app->group('/admin', function() {
-    $this->get('', 'AdminController:index')->setName('admin_index');
-    $this->get('/catalog/add', 'AdminController:addCatalog');
-});
 
-/**
- * api part -->
- */
-$app->group('/api', function() {
-    $this->post('/category/add', 'AdminController:createCatalog');
-});
 
 
 
