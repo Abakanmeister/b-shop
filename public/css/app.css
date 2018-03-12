@@ -2,8 +2,59 @@ body {
     padding-top: 80px;
     padding-bottom: 40px;
 }
-form input,
-form select{
+form.create-catalog-form input,
+form.create-product-form input,
+form.create-product-form select{
     margin-bottom: 1%;
-    width: 30% !important;
+    width: 50% !important;
+}
+
+.sidebar {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-right: 1px solid #eee;
+}
+
+/* Sidebar navigation */
+.sidebar {
+    padding-left: 0;
+    padding-right: 0;
+
+}
+
+.sidebar .nav {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li :hover{
+    background-color: #107ab7 !important;
+}
+
+.sidebar .nav-item {
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.sidebar .nav-item {
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+
+/*
+ * Dashboard
+ */
+
+/* Placeholders */
+.placeholders {
+    padding-bottom: 3rem;
+}
+
+.placeholder img {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }

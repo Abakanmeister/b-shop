@@ -10,16 +10,45 @@
     </head>
     <body>
         {% include 'templates/partials/navigation.twig' %}
-
         <div class="container">
-            {% include 'templates/partials/flash.twig' %}
-            {% block content %}{% endblock %}
+            <div class="row">
+                <div class="col-sm-3 col-md-3">
+                    <nav class="hidden-xs-down bg-faded sidebar">
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a class="btn btn-primary" href="{{ path_for('add-catalog') }}">add catalog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-primary" href="{{ path_for('show-catalog') }}">show catalog list</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-primary" href="{{ path_for('add-product') }}">add product</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-primary" href="{{ path_for('show-product') }}">show product list</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-9">
+                    {% include 'templates/partials/flash.twig' %}
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <footer>
+                    <div class="col-md-12">
+                        <h1>THIS IS FOOTER</h1>
+                    </div>
+                </footer>
+            </div>
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <script src="{{ base_url() }}/js/app.js"></script>
-        <script src="{{ base_url() }}/js/vuejs2.js"></script>
     </body>
 </html>
