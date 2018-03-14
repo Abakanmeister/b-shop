@@ -74,7 +74,7 @@ $container['PasswordController'] = function ($container) {
 };
 
 $container['CatalogController'] = function ($container) {
-    return new \App\Controllers\Auth\CatalogController($container);
+    return new \App\Controllers\CatalogController($container);
 };
 
 $container['AdminController'] = function ($container) {

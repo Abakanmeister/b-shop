@@ -25,6 +25,7 @@ $app->group('', function() {
     $this->get('/admin/catalog/', 'AdminController:showCatalogList')->setName('show-catalog');
     $this->get('/admin/product/add', 'AdminController:addProduct')->setName('add-product');
     $this->get('/admin/product', 'AdminController:showProductList')->setName('show-product');
+    $this->get('/admin/product/delete/{id}', 'AdminController:deleteProduct')->setName('delete-product');
 
     /**
  * api part -->
@@ -34,6 +35,8 @@ $app->group('', function() {
 
     $this->get('/api/product/add', 'AdminController:createProduct')->setName('add-product_api');
     $this->post('/api/product/add', 'AdminController:createProduct');
+
+    $this->post('/ajax/product/add', 'AdminController:ajaxCreateProduct')->setName('add-product_ajax');
 
 })->add(new AuthMiddleware($container));
 
